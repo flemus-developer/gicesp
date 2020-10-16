@@ -1,0 +1,145 @@
+{% extends "admin/base.html" %}
+
+{% block title %}GICESP| {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrastyle%}
+<style media="screen">
+/*encabezado donde va el logo*/
+#header {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: #072f50; /*Color del fondo de los títulos*/
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+/*inputs*/
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #205582;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.module caption {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    border-radius: 10px;
+    border: 2px solid #175676;
+    background: #9cedf7;
+    color: #175676;
+}
+
+a.section:link, a.section:visited {
+    color: #112731;
+    text-decoration: none;
+}
+
+#Texto tablas index
+a:link {
+    color: #4e7182;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #033a56;
+    text-decoration: none;
+}
+
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    color: #FFFFFF;
+}
+
+/*Panel de navegación*/
+div.breadcrumbs {
+    background: #023f6f;
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    color: #549dff;  /*amarillo: #FFFF45, verde: #93dc86 , azul: #4795FF*/
+    text-align: left;
+}
+
+/*Botón agregar*/
+.object-tools a:link, .object-tools a:visited {
+    display: block;
+    float: left;
+    padding: 3px 12px;
+    background: #03a9f4;
+    /* background-image: url(../img/tooltag-add.svg); agregar url del icono*/
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.object-tools a.addlink {
+    background-image: url(../img/tooltag-add.svg);
+}
+
+/*Apartado de filtros*/
+.module h2, .module caption, .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #CCE6F4;
+    color: #175676;
+}
+
+.module table {
+    border-collapse: collapse;
+    background: #8ACDEA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+td, th {
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid #bd1919;
+    vertical-align: top;
+    padding: 8px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+</style>
+{% endblock %}
+
+{% load static %}
+
+{% block branding %}
+<center>
+    <a href="{%url 'admin:index'%}"><img src="{% static 'Logo-Ministerio.png' %}"  class="img-fluid" width="300" height="100"/><br>
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">GICESP</a></h1>
+</center>
+
+{% endblock %}
+
+
+{% block nav-global %}{% endblock %}
+
+{% block footer %}
+
+<div id="footer">
+      <center><br>
+          <script type="text/javascript">
+           copyright=new Date();
+           update=copyright.getFullYear();
+           document.write("© " + update + " " + "Developed by ");
+         </script>
+        <img src="{% static 'Logo-seminario.jpeg' %}"  class="img-fluid" width="300" height="105"/>
+      </center>
+</div>
+{% endblock %}
